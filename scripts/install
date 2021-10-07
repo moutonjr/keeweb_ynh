@@ -51,11 +51,16 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 #=================================================
 # INSTALL SOURCES
 #=================================================
+ynh_script_progression --message="Setting up source files..." --time --weight=1
 
 # To avoid a complete rebuild, I downloaded the gh-pages as explained here: https://github.com/keeweb/keeweb#self-hosting
 # and put all files in "../sources/extra_files/app/", like that I can assure the version install in YunoHost is the version described in the manifest
 mkdir -p "$final_path"
 cp -r ../sources/extra_files/app/* "$final_path"
+
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
@@ -75,24 +80,9 @@ ynh_replace_string "(no-config)" "config.json" "$final_path/index.html"
 #=================================================
 # COPY THE CONFIG FILE
 #=================================================
+ynh_script_progression --message="Adding a configuration file..." --time --weight=1
 
-cp ../conf/config.json "$final_path/config.json"
-
-#=================================================
-# STORE THE CHECKSUM OF THE CONFIG FILE
-#=================================================
-
-# Enregistre la somme de contrôle du fichier de config
-ynh_store_file_checksum "$final_path/config.json"
-
-#=================================================
-# GENERIC FINALISATION
-#=================================================
-# SECURING FILES AND DIRECTORIES
-#=================================================
-
-# Les fichiers appartiennent à root
-chown -R root: $final_path
+ynh_add_config --template="../conf/config.json" --destination="$final_path/config.json"
 
 #=================================================
 # SETUP SSOWAT
@@ -104,6 +94,9 @@ if [ $is_public -eq 1 ]
 then
 	ynh_permission_update --permission="main" --add="visitors"
 fi
+
+# Only the admin can access the admin panel of the app (if the app has an admin panel)
+#ynh_permission_create --permission="admin" --url="/admin" --allowed=$admin
 
 #=================================================
 # RELOAD NGINX
