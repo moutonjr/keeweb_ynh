@@ -41,9 +41,8 @@ Client Web pour la lecture et l'édition de fichiers Keepass en local. Il peut �
 ## Documentations et ressources
 
 * Site officiel de l'app : https://keeweb.info/
-* Documentation officielle utilisateur : https://yunohost.org/apps
 * Documentation officielle de l'admin : https://github.com/keeweb/keeweb/wiki
-* Dépôt de code officiel de l'app : https://some.forge.com/example/example
+* Dépôt de code officiel de l'app : https://github.com/keeweb/keeweb
 * Documentation YunoHost pour cette app : https://yunohost.org/app_keeweb
 * Signaler un bug : https://github.com/YunoHost-Apps/keeweb_ynh/issues
 

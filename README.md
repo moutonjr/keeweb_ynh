@@ -15,7 +15,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Password manager compatible with KeePass
+Web client for reading and editing Keepass files locally. It can also sync with WebDAV (Nextcloud, Dropbox, Google Drive, OneDrive...)
 
 **Shipped version:** 1.18.7~ynh1
 
@@ -44,9 +44,8 @@ Password manager compatible with KeePass
 ## Documentation and resources
 
 * Official app website: https://keeweb.info/
-* Official user documentation: https://yunohost.org/apps
 * Official admin documentation: https://github.com/keeweb/keeweb/wiki
-* Upstream app code repository: https://some.forge.com/example/example
+* Upstream app code repository: https://github.com/keeweb/keeweb
 * YunoHost documentation for this app: https://yunohost.org/app_keeweb
 * Report a bug: https://github.com/YunoHost-Apps/keeweb_ynh/issues
 
