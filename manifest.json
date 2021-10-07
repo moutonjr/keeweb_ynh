@@ -8,6 +8,14 @@
 	},
 	"version": "1.18.7~ynh1",
 	"url": "https://keeweb.info/",
+	"upstream": {
+        "license": "MIT",
+        "website": "https://keeweb.info/",
+        "demo": "https://app.keeweb.info/",
+        "admindoc": "https://github.com/keeweb/keeweb/wiki",
+        "userdoc": "https://yunohost.org/apps",
+        "code": "https://some.forge.com/example/example"
+    },
 	"license": "MIT",
 	"maintainer": {
 		"name": "kay0u",
