@@ -13,8 +13,7 @@
         "website": "https://keeweb.info/",
         "demo": "https://app.keeweb.info/",
         "admindoc": "https://github.com/keeweb/keeweb/wiki",
-        "userdoc": "https://yunohost.org/apps",
-        "code": "https://some.forge.com/example/example"
+        "code": "https://github.com/keeweb/keeweb"
     },
 	"license": "MIT",
 	"maintainer": {

@@ -1,0 +1,1 @@
+Web client for reading and editing Keepass files locally. It can also sync with WebDAV (Nextcloud, Dropbox, Google Drive, OneDrive...)
